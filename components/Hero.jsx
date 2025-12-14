@@ -3,8 +3,7 @@ import { useRef } from "react";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import HeroCanvass from "./canvas/HeroCanvass";
 
-
-export function ThreeDMarqueeDemoSecond() {
+export default function ThreeDMarqueeDemoSecond() {
   
   const images = [
     "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
