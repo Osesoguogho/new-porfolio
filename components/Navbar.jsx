@@ -52,7 +52,7 @@ export const Navbar = () => {
         </div>
         {/* display in phones */}
         { isOpen &&
-        <div className="flex flex-col absolute right-1 py-5 top-[60px] w-[120px] bg-[#020327] rounded-xl shadow-2xl  h-[120px] gap-3 justify-center items-center ml-8 sm:hidden font-semibold text-sm z-40">
+        <div className="flex flex-col absolute right-1 py-5 top-[80px] w-[120px] bg-[#020327] rounded-xl shadow-2xl  h-[190px] gap-3 justify-center items-center ml-8 sm:hidden font-semibold text-sm z-40">
           {navComp.map((nav_items) => {
             return <NavItems key={nav_items.id} items={nav_items} />;
           })}
