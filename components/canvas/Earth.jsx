@@ -1,5 +1,7 @@
+"use client";
 import React, { Suspense, useState, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
+// import { Canvas } from "@react-three/fiber";
+import {CanvasContext} from "./CanvasContext";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 import { Model } from "./GlobeModel";
@@ -27,7 +29,7 @@ const EarthCanvas = () => {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
   return (
-    <Canvas
+    <CanvasContext
       camera={{
         fov: 45,
         near: 0.1,
@@ -64,7 +66,7 @@ const EarthCanvas = () => {
 
         <Preload all />
       </Suspense>
-    </Canvas>
+    </CanvasContext>
   );
 };
 

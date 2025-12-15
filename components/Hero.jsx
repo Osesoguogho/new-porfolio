@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import HeroCanvass from "./canvas/HeroCanvass";
 
-export default function ThreeDMarqueeDemoSecond() {
+export default function Hero() {
   
   const images = [
     "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -39,7 +39,7 @@ export default function ThreeDMarqueeDemoSecond() {
     "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODl8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D",
   ];
   return (
-    <div  className="relative mx-auto mb-5 flex min-h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden ">
+    <div  className="relative mx-auto mb-5 flex min-h-screen w-full max-w-7xl flex-col items-center justify-center overflow-clip px-6 py-16 text-center">
       <div className="relative z-20 grid gap-4 grid-cols-1 md:grid-cols-2 w-full h-full px-6 py-16 md:py-32 lg:px-8 lg:py-40">
         <div >
       <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-3xl lg:text-4xl">

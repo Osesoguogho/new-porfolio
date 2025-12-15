@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { SectionWrapper } from "@/hoc";
@@ -160,14 +161,10 @@ export function Projects() {
     },
   ];
   return (
-    <motion.div
-    variants={staggerContainer(stagger, delay)}
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.25 }}
-     id="projects" className="relative w-full max-w-7xl overflow-clip mb-20 rounded-md">
+    <div
+     id="projects" className="relative w-full overflow-clip mb-20 rounded-md mx-auto">
       <Timeline data={data} />
-    </motion.div>
+    </div>
   );
 }
 // const Projects = SectionWrapper(TimelineDemo, "projects");

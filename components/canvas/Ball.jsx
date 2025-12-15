@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+// import { Canvas } from "@react-three/fiber";
+import {CanvasContext} from "./CanvasContext";
 import {
   Decal,
   Float,
@@ -40,10 +41,8 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+    <CanvasContext
+      frameloop="demand"
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
@@ -51,7 +50,7 @@ const BallCanvas = ({ icon }) => {
       </Suspense>
 
       <Preload all />
-    </Canvas>
+    </CanvasContext>
   );
 };
 

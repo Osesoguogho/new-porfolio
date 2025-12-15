@@ -4,7 +4,16 @@
 @custom-variant dark (&:is(.dark *));
 
 
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
 
+main {
+  min-height: 100vh;
+  overflow: visible;
+}
 .hero{
     /*background-image: url("../assets/images/nestedbg.jpg");*/
     /*background-repeat: no-repeat;*/

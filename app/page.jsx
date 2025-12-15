@@ -27,9 +27,9 @@ export default function Home() {
         <Services />
         <Contact />
         <Footer />
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
         <StarsCanvas />
-        </div>
+        </div> */}
         
     </div>
   );

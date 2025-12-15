@@ -29,6 +29,8 @@ const ExperienceCard = ({ experience }) => {
           <Image
             src={experience.icon}
             alt={experience.company_name}
+             width={64}
+            height={64}
             className='w-[80%] h-[80%] object-contain'
           />
         </div>
@@ -58,18 +60,21 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-const Experience = () => {
+export const Experiences = () => {
     
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()}
+       initial="hidden"
+       animate="show"
+      >
         <h2 className={`text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center`}>
           Work Experience.
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+      <div className='mt-20 flex flex-col overflow-visible mb-20'>
+        <VerticalTimeline >
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
@@ -82,5 +87,5 @@ const Experience = () => {
   );
 };
 
-const Experiences = SectionWrapper(Experience, "work");
-export {Experiences};
+// const Experiences = SectionWrapper(Experience, "work");
+// export {Experiences};
