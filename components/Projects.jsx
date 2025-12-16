@@ -6,8 +6,6 @@ import {projects} from "@/constants/index";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { staggerContainer } from "../utils/motion";
 
 
 export function Projects() {
@@ -161,10 +159,13 @@ export function Projects() {
     },
   ];
   return (
-    <div
-     id="projects" className="relative w-full overflow-clip mb-20 rounded-md mx-auto">
+    <motion.div
+    initial={{ opacity: 0, y:100 }}
+    whileInView={{opacity: 1, y:0}}
+    transition={{ duration: 0.5, ease:"easeInOut" }}
+     id="projects" className="relative w-full overflow-clip mb-20 rounded-md mx-auto px-10 md:px-16 py-10">
       <Timeline data={data} />
-    </div>
+    </motion.div>
   );
 }
 // const Projects = SectionWrapper(TimelineDemo, "projects");

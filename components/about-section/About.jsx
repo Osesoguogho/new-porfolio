@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
@@ -7,6 +8,7 @@ import stethoscope from "@/assets/images/stethoscope.jpg";
 import learning from "@/assets/images/learning.jpg";
 import Image from 'next/image';
 import { SectionWrapper } from "@/hoc";
+import { motion } from "framer-motion";
 
 import {
   IconCpu,
@@ -15,11 +17,17 @@ import {
   IconBooks,
 } from "@tabler/icons-react";
  
-function About({sectionRef}) {
+export function AboutSec() {
   return (
-    <>
-    <h2 ref={sectionRef} className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center">ABOUT ME</h2>
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] mt-20 ">
+    <motion.div
+      initial={{ opacity: 0, y:100 }}
+      whileInView={{opacity: 1, y:0}}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className="w-full mx-auto px-10 md:px-16 py-10 my-20"
+      id="about"
+      >
+    <h2  className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center">ABOUT ME</h2>
+    <BentoGrid  className="max-w-4xl mx-auto md:auto-rows-[20rem] mt-20 ">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -31,7 +39,7 @@ function About({sectionRef}) {
         />
       ))}
     </BentoGrid>
-    </>
+    </motion.div>
   );
 }
 const Skeleton = () => (
@@ -89,5 +97,5 @@ const items = [
   },
 ];
 
-const AboutSec = SectionWrapper(About, "about");
-export {AboutSec}
+// const AboutSec = SectionWrapper(About, "about");
+// export {AboutSec}

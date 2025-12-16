@@ -63,7 +63,12 @@ const ExperienceCard = ({ experience }) => {
 export const Experiences = () => {
     
   return (
-    <>
+    <motion.div
+      id="work"
+      initial={{ opacity: 0, y:100 }}
+      whileInView={{opacity: 1, y:0}}
+      transition={{ duration: 0.5, ease:"easeInOut" }}
+      className="w-full mx-auto px-10 md:px-16 py-10">
       <motion.div variants={textVariant()}
        initial="hidden"
        animate="show"
@@ -83,7 +88,7 @@ export const Experiences = () => {
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </motion.div>
   );
 };
 

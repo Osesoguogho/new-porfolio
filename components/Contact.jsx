@@ -1,9 +1,10 @@
+"use client"
 import {useState} from 'react';
 import emailjs from '@emailjs/browser';
 import { SectionWrapper } from '@/hoc';
 import EarthCanvas from './canvas/Earth';
 import StarsCanvas from './canvas/Star';
-
+import { motion } from "framer-motion"; 
 
 export const Contact = () => {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -55,7 +56,11 @@ setStatus("Failed to send message. Try again.");
 }
 };
   return (
-    <section className="relative w-[100%] min-h-screen max-w-7xl bg-black text-white flex items-center justify-center p-6 rounded-md mx-auto">
+    <motion.section 
+     initial={{ opacity: 0, y:100 }}
+      whileInView={{opacity: 1, y:0}}
+      transition={{ duration: 0.5, ease:"easeInOut", delay: 0.2 }}
+     id="contact" className="relative w-[100%] min-h-screen max-w-7xl bg-black text-white flex items-center justify-center px-10 md:px-16 py-10 rounded-md mx-auto">
     <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row gap-8 items-center justify-center">
 
 {/* Left: Form */}
@@ -123,10 +128,11 @@ Send Message
 <StarsCanvas />
 </div>
 {/* <EarthCanvas /> */}
-</section>
+</motion.section>
 
   )
-}
+};
+
 
 // const Contact = SectionWrapper(ContactSection, "contact");
 // export {Contact};
