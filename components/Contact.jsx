@@ -60,7 +60,7 @@ setStatus("Failed to send message. Try again.");
      initial={{ opacity: 0, y:100 }}
       whileInView={{opacity: 1, y:0}}
       transition={{ duration: 0.5, ease:"easeInOut", delay: 0.2 }}
-     id="contact" className="relative w-[100%] min-h-screen max-w-7xl bg-black text-white flex items-center justify-center px-10 md:px-16 py-10 rounded-md mx-auto">
+     id="contact" className="relative w-[100%] min-h-screen max-w-7xl bg-black text-white flex items-center justify-center px-5 md:px-16 py-10 rounded-md mx-auto">
     <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row gap-8 items-center justify-center">
 
 {/* Left: Form */}
