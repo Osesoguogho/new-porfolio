@@ -5,18 +5,18 @@ import { useEffect, useRef, useState } from "react";
 
 
 
-function Cleanup() {
-  const { gl } = useThree();
+// function Cleanup() {
+//   const { gl } = useThree();
 
-  useEffect(() => {
-    return () => {
-      gl.forceContextLoss();
-      gl.dispose();
-    };
-  }, [gl]);
+//   useEffect(() => {
+//     return () => {
+//       gl.forceContextLoss();
+//       gl.dispose();
+//     };
+//   }, [gl]);
 
-  return null;
-}
+//   return null;
+// }
 
 /* ✅ Chrome-safe Canvas wrapper */
 export function CanvasContext({
@@ -24,29 +24,37 @@ export function CanvasContext({
   threshold = 0.5,
   ...props
 }) {
-  const containerRef = useRef(null);
+   const containerRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
       { threshold }
     );
-
     if (containerRef.current) observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, [threshold]);
+
+  useEffect(() => {
+    if (visible) {
+      setMounted(true);
+    } else {
+      const t = setTimeout(() => setMounted(false), 800);
+      return () => clearTimeout(t);
+    }
+  }, [visible]);
 
   return (
     <div
       ref={containerRef}
       style={{ height:"100%", width: "100%", position: "relative" }}
     >
-      {visible && (
+      {mounted && (
         <Canvas
           {...props}
         >
-          <Cleanup />
           {children}
         </Canvas>
       )}
