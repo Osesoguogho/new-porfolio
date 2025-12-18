@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Oses 3D porfolio",
+  title: "Dr Oses porfolio",
   description: "Design by Dr Oses ",
 };
 
